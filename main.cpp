@@ -3,6 +3,7 @@
 using std::cout;
 
 #include "Sayajin.h"
+#include "Sayajin.cpp"
 
 int main() {
   cout << "Usando Sayajin no main\n";
