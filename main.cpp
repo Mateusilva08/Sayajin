@@ -9,7 +9,8 @@ int main() {
   cout << "Usando Sayajin no main\n";
 
   Sayajin goku("Goku", "Normal", 8348);
-  Sayajin vegeta("vegeta", "Normal", 7924);
+  Sayajin vegeta;
+  Sayajin copiaVegeta(vegeta);
 
   goku.print();
   vegeta.print();
@@ -31,6 +32,14 @@ int main() {
   
   vegeta.untransform();
   vegeta.print();
-  
+
+  goku.kamehameha();
+
+  vegeta.genkidama();
+
+  copiaVegeta.print();
+  copiaVegeta.transform();
+  copiaVegeta.print();
+
   return 0;
 }
