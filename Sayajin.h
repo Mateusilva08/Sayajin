@@ -30,14 +30,13 @@ public:
 private:
 
   void setNivel(int);
-  void setGuerreiro(string) const;
-
+  
   double ki;
   string nome;
   string forma;
   int nivel;
-  const double normal;
-  const string guerreiro;
+  const double NORMAL;
+  const string GUERREIRO;
 
 };
 
