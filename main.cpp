@@ -8,38 +8,39 @@ using std::cout;
 int main() {
   cout << "Usando Sayajin no main\n";
 
-  Sayajin goku("Goku", "Normal", 8348);
-  Sayajin vegeta;
-  Sayajin copiaVegeta(vegeta);
+  Sayajin goku("Goku", "Normal", 8348, false);
+  Sayajin vegeta("Vegeta", "Normal", 7924, false);
+  Sayajin trunks("Trunks", "Normal", 7249, true);
 
-  goku.print();
-  vegeta.print();
+  /*O atributo GUERREIRO permanece constante, pois todos
+  os sayajins são uma raça guerreira*/
+  trunks.print();
+  trunks.kamehameha();
+  trunks.genkidama();
+  trunks.printNumSayajin();
 
-  goku.transform();
-  goku.print();
+  trunks.transform();
+  trunks.print();
 
-  vegeta.transform();
-  vegeta.print();
+  trunks.transform();
+  trunks.print();
 
-  goku.transform();
-  goku.print();
+  trunks.transform();
+  trunks.print();
 
-  goku.transform();
-  goku.print();
+  trunks.untransform();
+  trunks.print();
 
-  goku.untransform();
-  goku.print();
-  
-  vegeta.untransform();
-  vegeta.print();
-
-  goku.kamehameha();
-
-  vegeta.genkidama();
-
-  copiaVegeta.print();
-  copiaVegeta.transform();
-  copiaVegeta.print();
+  goku.insereEsfera("Esfera de 1 estrela");
+  goku.insereEsfera("Esfera de 2 estrelas");
+  goku.insereEsfera("Esfera de 3 estrelas");
+  goku.insereEsfera("Esfera de 4 estrelas");
+  goku.insereEsfera("Esfera de 5 estrelas");
+  goku.insereEsfera("Esfera de 6 estrelas");
+  goku.insereEsfera("Esfera de 7 estrelas");
+  goku.insereEsfera("Esfera de 8 estrelas");
+  goku.insereEsfera("Esfera de 9 estrelas");
+  goku.printEsferas();
 
   return 0;
 }
