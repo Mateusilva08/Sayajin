@@ -10,7 +10,7 @@ using std::vector;
 class Sayajin
 {
 public:
-  Sayajin(string, string, double, bool, int = 0);
+  Sayajin(const string &, const string &, double, bool, int = 0);
   //Não estou utilizando esses construtores
   //Sayajin();
   //Sayajin(const Sayajin&);
@@ -21,7 +21,7 @@ public:
   void untransform();
   void kamehameha() const;
   void genkidama() const;
-  void printNumSayajin() const;
+  static void printNumSayajin();
   void insereEsfera(const string &);
   void printEsferas() const;
 

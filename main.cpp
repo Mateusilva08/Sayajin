@@ -9,7 +9,7 @@ int main() {
   cout << "Usando Sayajin no main\n";
 
   Sayajin goku("Goku", "Normal", 8348, false);
-  Sayajin vegeta("Vegeta", "Normal", 7924, false);
+  const Sayajin VEGETA("Vegeta", "Normal", 7924, false);
   Sayajin trunks("Trunks", "Normal", 7249, true);
 
   /*O atributo GUERREIRO permanece constante, pois todos
@@ -18,12 +18,6 @@ int main() {
   trunks.kamehameha();
   trunks.genkidama();
   trunks.printNumSayajin();
-
-  trunks.transform();
-  trunks.print();
-
-  trunks.transform();
-  trunks.print();
 
   trunks.transform();
   trunks.print();
@@ -41,6 +35,13 @@ int main() {
   goku.insereEsfera("Esfera de 8 estrelas");
   goku.insereEsfera("Esfera de 9 estrelas");
   goku.printEsferas();
+
+  VEGETA.genkidama();
+  VEGETA.kamehameha();
+
+  goku.~Sayajin();
+  Sayajin::printNumSayajin();
+
 
   return 0;
 }

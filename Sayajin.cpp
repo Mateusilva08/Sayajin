@@ -8,14 +8,14 @@ using std::endl;
 const string Sayajin::GUERREIRO = "Guerreiro";
 int Sayajin::numSayajin = 0;
 
-Sayajin::Sayajin(string nome, string forma, double ki, bool espada, int nivel): NORMAL(ki)
+Sayajin::Sayajin(const string &nome, const string &forma, double ki, bool espada, int nivel): NORMAL(ki)
 {
   this->setNome(nome);
   this->setForma(forma);
   this->setKi(ki);
   this->setNivel(nivel);
   this->setEspada(espada);
-  numSayajin += 1;
+  numSayajin++;
 }
 
 /*Sayajin::Sayajin(): NORMAL(7924), GUERREIRO("Guerreiro")
@@ -34,7 +34,7 @@ Sayajin::Sayajin(string nome, string forma, double ki, bool espada, int nivel): 
   this->setNivel(copia.nivel);
 }*/
 
-Sayajin::~Sayajin() {}
+Sayajin::~Sayajin() {numSayajin--;}
 
 string Sayajin::getNome() const
 {
@@ -90,7 +90,7 @@ void Sayajin::print() const {
   cout << "Poder de luta: " << ki << '\n';
 }
 
-void Sayajin::printNumSayajin() const{
+void Sayajin::printNumSayajin(){
   cout << "\nNumero de Sayajins criados: " << numSayajin << '\n';
 }
 
