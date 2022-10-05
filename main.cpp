@@ -13,19 +13,16 @@ int main() {
   Sayajin trunks("Trunks", "Normal", 7249, true);
 
   Sayajin *sayajinPtr;
-  sayajinPtr = &goku;
-
-  sayajinPtr->genkidama();
-  sayajinPtr->transform();
-
-  Sayajin::setEsferaDrag();
-  Sayajin::printEsferaDrag();
-
-  trunks.setComida();
-  trunks.print();
+  cout << "Criando um objeto e colocando o endereco no ponteiro\n";
+  sayajinPtr = new Sayajin("Raditz", "Normal", 1200, false);
 
   sayajinPtr->setComida();
   sayajinPtr->print();
+
+  cout << "\nDeletando o sayajin "<< sayajinPtr->getNome() << ".\n";
+  delete sayajinPtr;
+  sayajinPtr = 0;
+  cout << "\n\n";
 
   return 0;
 }

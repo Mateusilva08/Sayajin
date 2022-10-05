@@ -2,16 +2,18 @@
 
 #include <iostream>
 #include <string>
+#include <map>
 using std::cout;
 using std::cin;
 using std::endl;
 using std::to_string;
+using std::map;
 
 
 const string Sayajin::GUERREIRO = "Guerreiro";
 int Sayajin::numSayajin = 0;
 string Sayajin::esferaDrag[7];
-const string Sayajin::COMIDAFAV[4] = {"Lamen", "Yakisoba", "Sushi", "Temaki"};
+//const string Sayajin::COMIDAFAV[4] = {"Lamen", "Yakisoba", "Sushi", "Temaki"};
 
 Sayajin::Sayajin(const string &nome, const string &forma, double ki, bool espada, int nivel): NORMAL(ki)
 {
@@ -40,7 +42,10 @@ Sayajin::Sayajin(const string &nome, const string &forma, double ki, bool espada
   this->setNivel(copia.nivel);
 }*/
 
-Sayajin::~Sayajin() {numSayajin--;}
+Sayajin::~Sayajin() 
+{
+  numSayajin--;
+}
 
 string Sayajin::getNome() const
 {
@@ -116,18 +121,26 @@ void Sayajin::printEsferaDrag(){
 }
 
 void Sayajin::setComida(){
-  int x = 0;
-  int k = 0;
+  int food = 0;
 
-  cout << "\n!!!Comidas disponiveis:";
-  for (string comida: COMIDAFAV)
-  {
-    cout << "\n" << k << "- " << comida << "\n";
-    k++;
-  }
-  cout << "\nInforme a comida favorita de " << nome << "\n";
-  cin >> x;
-  this->comida = COMIDAFAV[x];
+  map<int, string> comidaFav;
+  comidaFav[0] = "Lamen"; 
+  comidaFav[1] = "Yakisoba"; 
+  comidaFav[2] = "Sushi"; 
+  comidaFav[3] = "Temaki";
+
+  map<int, string>::iterator itr;
+    cout << "\nThe map comidaFav is : \n";
+    cout << "\tKEY\tCOMIDA\n";
+    for (itr = comidaFav.begin(); itr != comidaFav.end(); ++itr) 
+    {
+        cout << '\t' << itr->first << '\t' << itr->second << '\n';
+    }
+
+    cout << "\nInforme a comida favorita de  " << this->nome << ": \n";
+    cin >> food;
+
+    this->comida = comidaFav[food];
 }
 
 void Sayajin::print() const {

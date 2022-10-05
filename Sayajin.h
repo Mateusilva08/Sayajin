@@ -54,7 +54,8 @@ private:
   bool espada;
   static string esferaDrag[];
   string comida;
-  const static string COMIDAFAV[];
+
+  //const static string COMIDAFAV[];
 
   //vector< string * > esferasDoDragao;
 
